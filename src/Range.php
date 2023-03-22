@@ -89,8 +89,8 @@ class Range implements \Iterator, \Countable
 	}
 
 	/**
-	 * Same as contains but works on an array of IP|Network|Range and returns true if any of the array items are in the range 
-	 * 
+	 * Same as contains but works on an array of IP|Network|Range and returns true if any of the array items are in the range
+	 *
 	 * @param array $findArray
 	 * @return bool
 	 * @throws \Exception
@@ -119,8 +119,8 @@ class Range implements \Iterator, \Countable
 	}
 
 	/**
-	 * Same as contains but works on an array of IP|Network|Range and returns true if all of the array items are in the range 
-	 * 
+	 * Same as contains but works on an array of IP|Network|Range and returns true if all of the array items are in the range
+	 *
 	 * @param array $findArray
 	 * @return bool
 	 * @throws \Exception
@@ -253,8 +253,7 @@ class Range implements \Iterator, \Countable
 	/**
 	 * @return IP
 	 */
-	#[ReturnTypeWillChange]
-	public function current()
+	public function current() : mixed
 	{
 		return $this->firstIP->next($this->position);
 	}
@@ -262,8 +261,7 @@ class Range implements \Iterator, \Countable
 	/**
 	 * @return int
 	 */
-	#[ReturnTypeWillChange]
-	public function key()
+	public function key() : mixed
 	{
 		return $this->position;
 	}
@@ -271,8 +269,7 @@ class Range implements \Iterator, \Countable
     /**
      * @return void
      */
-	#[ReturnTypeWillChange]
-	public function next()
+	public function next() : void
 	{
 		++$this->position;
 	}
@@ -280,8 +277,7 @@ class Range implements \Iterator, \Countable
     /**
      * @return void
      */
-	#[ReturnTypeWillChange]
-	public function rewind()
+	public function rewind() : void
 	{
 		$this->position = 0;
 	}
@@ -289,8 +285,7 @@ class Range implements \Iterator, \Countable
 	/**
 	 * @return bool
 	 */
-	#[ReturnTypeWillChange]
-	public function valid()
+	public function valid() : bool
 	{
 		return strcmp($this->firstIP->next($this->position)->inAddr(), $this->lastIP->inAddr()) <= 0;
 	}
@@ -298,8 +293,7 @@ class Range implements \Iterator, \Countable
 	/**
 	 * @return int
 	 */
-	#[ReturnTypeWillChange]
-	public function count()
+	public function count() : int
 	{
 		return (integer)bcadd(bcsub($this->lastIP->toLong(), $this->firstIP->toLong()), 1);
 	}

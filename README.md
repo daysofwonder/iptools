@@ -20,15 +20,16 @@ PHP Library for manipulating network addresses (IPv4 and IPv6).
 [![PHP 7.2](https://img.shields.io/badge/PHP-7.2-8892BF.svg)](http://php.net)
 [![PHP 7.3](https://img.shields.io/badge/PHP-7.3-8892BF.svg)](http://php.net)
 [![PHP 7.4](https://img.shields.io/badge/PHP-7.4-8892BF.svg)](http://php.net)
+[![PHP 8.2](https://img.shields.io/badge/PHP-7.4-8892BF.svg)](http://php.net)
 
 ## Changes since fork
 
 * 100% Code Coverage!
-* Now Testing On PHP v5.6, v7.0, v7.1, v7.2, v7.3, and v7.4
+* Now Testing On PHP v5.6, v7.0, v7.1, v7.2, v7.3, v7.4 and 8.2
 * Added CodeClimate Coverage Reporting
 * Added containsAny and containsAll to Range class for dealing with an array of IP/Range/Networks instead of a single one
 * Added excludeArray to the Network class for dealing with an array of IP/Range/Networks to exclude instead of the single one with the existing exclude method
- 
+
 ## Installation
 
 Composer:

@@ -356,8 +356,7 @@ class Network implements \Iterator, \Countable
     /**
     * @return IP
     */
-	#[ReturnTypeWillChange]
-    public function current()
+    public function current() : mixed
     {
         return $this->getFirstIP()->next($this->position);
     }
@@ -365,8 +364,7 @@ class Network implements \Iterator, \Countable
     /**
     * @return int
     */
-	#[ReturnTypeWillChange]
-    public function key()
+    public function key() : mixed
     {
         return $this->position;
     }
@@ -374,8 +372,7 @@ class Network implements \Iterator, \Countable
     /**
      * @return void
      */
-	#[ReturnTypeWillChange]
-    public function next()
+    public function next() : void
     {
         ++$this->position;
     }
@@ -383,8 +380,7 @@ class Network implements \Iterator, \Countable
     /**
      * @return void
      */
-	#[ReturnTypeWillChange]
-    public function rewind()
+    public function rewind() : void
     {
         $this->position = 0;
     }
@@ -392,8 +388,7 @@ class Network implements \Iterator, \Countable
     /**
     * @return bool
     */
-	#[ReturnTypeWillChange]
-    public function valid()
+    public function valid() : bool
     {
         return strcmp($this->getFirstIP()->next($this->position)->inAddr(), $this->getLastIP()->inAddr()) <= 0;
     }
@@ -401,8 +396,7 @@ class Network implements \Iterator, \Countable
     /**
     * @return int
     */
-	#[ReturnTypeWillChange]
-    public function count()
+    public function count() : int
     {
         return (integer)$this->getBlockSize();
     }
